@@ -138,7 +138,7 @@ def get_program_recommendations(student_profile):
         if not endpoint.endswith('/api/v1/chat/completions'):
             endpoint = endpoint + '/api/v1/chat/completions'
         
-        response = requests.post(endpoint, json=payload, headers=headers, timeout=30)
+        response = requests.post(endpoint, json=payload, headers=headers, timeout=60)
         response.raise_for_status()
         
         result = response.json()
